@@ -1,0 +1,16 @@
+(set-logic LIA)
+(synth-fun plus  ( (x Int) (y Int)) Int ((Start Int ( 0 1 2 x y
+                 (+ Start Start)
+                 (- Start Start) (ite BoolExpr Start Start)))
+                 (BoolExpr Bool ((< Start Start) (<= Start Start) (> Start Start) (>= Start Start) (and BoolExpr BoolExpr) (or BoolExpr BoolExpr) (not BoolExpr BoolExpr)))))
+
+(constraint (= (plus 0 0) 0))
+(constraint (= (plus 0 1) 1))
+(constraint (= (plus 0 2) 2))
+(constraint (= (plus 1 0) 1))
+(constraint (= (plus 1 1) 2))
+(constraint (= (plus 1 2) 3))
+(constraint (= (plus 2 0) 2))
+(constraint (= (plus 2 1) 3))
+(constraint (= (plus 2 2) 4))
+(check-synth)

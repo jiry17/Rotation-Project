@@ -1,0 +1,16 @@
+(set-logic LIA)
+(synth-fun max  ( (x Int) (y Int)) Int ((Start Int ( 0 1 2 x y
+                 (+ Start Start)
+                 (- Start Start) (ite BoolExpr Start Start)))
+                 (BoolExpr Bool ((< Start Start) (<= Start Start) (> Start Start) (>= Start Start) (and BoolExpr BoolExpr) (or BoolExpr BoolExpr) (not BoolExpr BoolExpr)))))
+
+(constraint (= (max 0 0) 0))
+(constraint (= (max 0 1) 1))
+(constraint (= (max 0 2) 2))
+(constraint (= (max 1 0) 1))
+(constraint (= (max 1 1) 1))
+(constraint (= (max 1 2) 2))
+(constraint (= (max 2 0) 2))
+(constraint (= (max 2 1) 2))
+(constraint (= (max 2 2) 2))
+(check-synth)
