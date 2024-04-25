@@ -1,0 +1,9 @@
+*.DS_Store
+*.idea
+*__pycache__
+*.vscode
+tests*
+cmake-build-*
+runner/cache/* 
+basic/config.cpp
+build*
